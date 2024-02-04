@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/actor_item_width"
+    android:layout_height="@dimen/actor_item_height"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/actor_items_margin"
+    android:backgroundTint="@null"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/actor_items_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/poster"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/actor_item_poster_height_percent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/actor_item_margin_horizontal"
+            android:ellipsize="end"
+            android:maxLines="@dimen/actor_item_max_lines"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/actor_item_name_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/character"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/poster" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/character"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/actor_item_margin_horizontal"
+            android:ellipsize="end"
+            android:maxLines="@dimen/actor_item_character_max_lines"
+            android:textAlignment="textStart"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/actor_item_name_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

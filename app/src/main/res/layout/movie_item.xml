@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/movie_item_height"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="@dimen/movie_item_margin_horizontal"
+    android:layout_marginVertical="@dimen/movie_item_margin_vertical"
+    android:background="@drawable/ripple"
+    android:backgroundTint="@null"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/poster"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="@dimen/movie_item_poster_margin_top"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="@dimen/movie_poster_height_percent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="@dimen/movie_poster_poster_height_percent" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/rating_progress"
+        android:layout_width="@dimen/fragment_detail_rating_progress_size"
+        android:layout_height="@dimen/fragment_detail_rating_progress_size"
+        android:layout_marginStart="@dimen/fragment_detail_rating_progress_margin_start"
+        android:layout_marginTop="@dimen/fragment_detail_rating_progress_margin_top"
+        android:background="@drawable/round_back"
+        app:indicatorColor="@color/red"
+        app:indicatorInset="@dimen/fragment_detail_rating_indicator_inset"
+        app:indicatorSize="@dimen/fragment_detail_rating_indicator_size"
+        app:layout_constraintStart_toStartOf="@id/poster"
+        app:layout_constraintTop_toBottomOf="@id/poster"
+        app:trackThickness="@dimen/fragment_detail_rating_indicator_track_thickness" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/rating_value"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_margin="@dimen/rating_value_margin"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:autoSizeMaxTextSize="@dimen/rating_value_max_text_size"
+        app:autoSizeMinTextSize="@dimen/rating_value_min_text_size"
+        app:autoSizeStepGranularity="@dimen/rating_value_step_size"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/rating_progress"
+        app:layout_constraintEnd_toEndOf="@id/rating_progress"
+        app:layout_constraintStart_toStartOf="@id/rating_progress"
+        app:layout_constraintTop_toTopOf="@id/rating_progress" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="@dimen/movie_item_title_max_lines"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rating_progress" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/release"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="@dimen/movie_item_release_max_lines"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
